@@ -1,4 +1,4 @@
-package eu.alepposhop.apk;
+package market.aleppo.apk;
 
 import android.os.Build;
 import android.os.Bundle;

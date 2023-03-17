@@ -1,10 +1,10 @@
 // export const LOADING_IMAGE = require("../assets/aleppo-logo.png");
 export const LOADING_IMAGE = {
-  uri: "https://alepposhop.eu/wp-content/uploads/app-assets/react-native-AleppoShop/loader-img.png",
+  uri: "https://aleppo.market/wp-content/uploads/app-assets/android/loader-img.png",
 };
 
-export const WEBSITE_URL = "https://www.alepposhop.eu/";
+export const WEBSITE_URL = "https://www.aleppo.market/";
 
 export const CACHE_ENABLED = true;
 
-export const ONE_SIGNAL_APP_ID = "4774e745-d351-43f2-af9e-6ada3ef7cdf1";
+export const ONE_SIGNAL_APP_ID = "553c68c8-8fa0-4265-9115-9ab30db5bbbc";

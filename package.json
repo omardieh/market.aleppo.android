@@ -1,5 +1,5 @@
 {
-  "name": "eu.alepposhop.apk",
+  "name": "market.aleppo.apk",
   "version": "2.0.1",
   "scripts": {
     "start": "expo start --dev-client",
@@ -19,7 +19,7 @@
     "react-native": "0.64.3",
     "react-native-onesignal": "^4.3.7",
     "react-native-web": "0.17.1",
-    "react-native-webview": "^11.18.1",
+    "react-native-webview": "11.15.0",
     "use-state-if-mounted": "^1.0.4"
   },
   "devDependencies": {
