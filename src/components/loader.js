@@ -3,7 +3,7 @@ import { Animated, Image, View, Text } from "react-native";
 import TouchableScale from "./touchable-scale";
 import { useStateIfMounted } from "use-state-if-mounted";
 
-const DEFAULT_SIZE = 200;
+const DEFAULT_SIZE = 500;
 const INTERVAL = 1000;
 const ANIMATION_DURATION = 3000;
 

@@ -95,7 +95,7 @@ export default function WebviewScreen({
       >
         {loading && (
           <View style={styles.view}>
-            <Loader image={LOADING_IMAGE} />
+            <Loader color="olive" image={LOADING_IMAGE} />
           </View>
         )}
         <WebView
