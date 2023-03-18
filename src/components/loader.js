@@ -3,7 +3,7 @@ import { Animated, Image, View, Text } from "react-native";
 import TouchableScale from "./touchable-scale";
 import { useStateIfMounted } from "use-state-if-mounted";
 
-const DEFAULT_SIZE = 200;
+const DEFAULT_SIZE = 500;
 const INTERVAL = 1000;
 const ANIMATION_DURATION = 3000;
 
@@ -67,12 +67,12 @@ export default function Loader({ size, color, image }) {
     });
   };
 
-  const onPress = () => {
-    addMoreCircles();
-    if (onPress) {
-      onPress();
-    }
-  };
+  // const onPress = () => {
+  //   addMoreCircles();
+  //   if (onPress) {
+  //     onPress();
+  //   }
+  // };
 
   const SIZE = size || DEFAULT_SIZE;
   const IMAGE = image;
@@ -106,7 +106,9 @@ export default function Loader({ size, color, image }) {
         })}
 
         <View style={{ zIndex: 1000, position: "absolute" }}>
-          <TouchableScale onPress={() => onPress()}>
+          <TouchableScale
+          // onPress={() => onPress()}
+          >
             <View
               style={{
                 shadowColor: "#000",

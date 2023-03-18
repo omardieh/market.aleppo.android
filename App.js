@@ -8,11 +8,12 @@ import {
   PRIMARY_COLOR,
   WEBSITE_URL,
 } from "./src/config";
+import { LogBox } from "react-native";
 
 export default function App() {
   useEffect(() => {
     OneSignal.setAppId(ONE_SIGNAL_APP_ID);
-    // LogBox.ignoreLogs(["Warning: ..."]);
+    LogBox.ignoreLogs(["Warning: ..."]);
   }, []);
 
   return (

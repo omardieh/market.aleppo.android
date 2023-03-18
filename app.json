@@ -19,6 +19,7 @@
       "bundleIdentifier": "market.aleppo.apk"
     },
     "android": {
+      "minifyEnabled": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"

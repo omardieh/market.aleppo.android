@@ -1,43 +1,44 @@
-import React, {PureComponent} from 'react';
-import {Animated, TouchableOpacity} from 'react-native';
+import React, { useState } from "react";
+import { Animated, TouchableOpacity } from "react-native";
 
-export default class TouchableScale extends PureComponent {
-  animatedValue = new Animated.Value(1);
+export default function TouchableScale(props) {
+  const [animatedValue, setAnimatedValue] = useState(new Animated.Value(1));
 
-  handlePressIn = () => {
-    if (!this.props.loading) {
-      Animated.spring(this.animatedValue, {
-        toValue: 0.9,
-      }).start();
-    }
+  // const handlePressIn = () => {
+  //   if (!props.loading) {
+  //     Animated.spring(animatedValue, {
+  //       toValue: 0.9,
+  //       useNativeDriver: true,
+  //     }).start();
+  //   }
+  // };
+
+  // const handlePressOut = () => {
+  //   Animated.spring(animatedValue, {
+  //     toValue: 1,
+  //     useNativeDriver: true,
+  //   }).start();
+  // };
+
+  const animatedStyle = {
+    transform: [{ scale: animatedValue }],
   };
 
-  handlePressOut = () => {
-    Animated.spring(this.animatedValue, {
-      toValue: 1,
-    }).start();
-  };
-
-  render() {
-    const animatedStyle = {
-      transform: [{scale: this.animatedValue}],
-    };
-
-    return (
-      <TouchableOpacity
-        {...this.props}
-        activeOpacity={0.8}
-        onPressIn={() => this.handlePressIn()}
-        onPressOut={() => this.handlePressOut()}
-        onPress={
-          this.props.loading
-            ? console.log('button disabled already loading')
-            : this.props.onPress
-        }>
-        <Animated.View {...this.props} style={[animatedStyle]}>
-          {this.props.children}
-        </Animated.View>
-      </TouchableOpacity>
-    );
-  }
+  return (
+    <TouchableOpacity
+      {...props}
+      activeOpacity={0.8}
+      // onPressIn={() => handlePressIn()}
+      // onPressOut={() => handlePressOut()}
+      // onPress={
+      //   props.loading
+      //     ? () => console.log("button disabled already loading")
+      //     : props.onPress
+      // }
+    >
+      <Animated.View {...props} style={[animatedStyle]}>
+        {props.children}
+      </Animated.View>
+    </TouchableOpacity>
+  );
 }

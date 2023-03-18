@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId 'eu.alepposhop.apk'
+        applicationId 'market.aleppo.apk'
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
