@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "690994474880",
+    "project_id": "aleppo-market-349814",
+    "storage_bucket": "aleppo-market-349814.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:690994474880:android:b64902a7507de557d71b65",
+        "android_client_info": {
+          "package_name": "market.aleppo.apk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "690994474880-mfvadjigfqvk7mlan4f6kfj50soeavaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy9OgPASppaDSICz6WoLuEXPKdYopLxA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "690994474880-mfvadjigfqvk7mlan4f6kfj50soeavaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

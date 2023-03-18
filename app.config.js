@@ -1,15 +1,16 @@
 export default {
+  slug: "aleppomarket",
   android: {
-    package: "eu.alepposhop.apk",
+    package: "market.aleppo.apk",
   },
   ios: {
-    bundleIdentifier: "eu.alepposhop.apk",
+    bundleIdentifier: "market.aleppo.apk",
   },
   plugins: [
     [
       "onesignal-expo-plugin",
       {
-        mode: "development",
+        mode: "production",
       },
     ],
   ],
