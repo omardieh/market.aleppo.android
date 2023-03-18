@@ -20,6 +20,9 @@
     },
     "android": {
       "minifyEnabled": true,
+      "gradleProperties": {
+        "android.enableR8": true
+      },
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
