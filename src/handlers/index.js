@@ -28,3 +28,22 @@ export const onRefresh = (webViewRef, setState) => {
     navState: { ...state.navState, loading: true },
   }));
 };
+
+export const onLayout = (e, setState) => {
+  e.persist();
+  setState((state) => ({
+    ...state,
+    scrollViewHeight: e.nativeEvent.layout.height,
+  }));
+};
+
+export const onLoadStart = (setState) => {
+  setState((state) => ({
+    ...state,
+    navState: { ...state.navState, loading: true },
+  }));
+};
+
+export const onNavigationStateChange = (navState, setState) => {
+  setState((state) => ({ ...state, navState: navState }));
+};

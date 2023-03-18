@@ -12,7 +12,14 @@ import {
 import { WebView } from "react-native-webview";
 import Loader from "./loader";
 import { LOADING_IMAGE } from "../config";
-import { handleBackPress, onScroll, onRefresh } from "./../handlers";
+import {
+  handleBackPress,
+  onScroll,
+  onRefresh,
+  onLayout,
+  onLoadStart,
+  onNavigationStateChange,
+} from "./../handlers";
 
 export default function WebviewScreen({
   CACHE_ENABLED,
@@ -48,13 +55,7 @@ export default function WebviewScreen({
           flex: 1,
           height: "100%",
         }}
-        onLayout={(e) => {
-          e.persist();
-          setState((state) => ({
-            ...state,
-            scrollViewHeight: e.nativeEvent.layout.height,
-          }));
-        }}
+        onLayout={(e) => onLayout(e, setState)}
         refreshControl={
           <RefreshControl
             refreshing={false}
@@ -70,8 +71,9 @@ export default function WebviewScreen({
         )}
         <WebView
           startInLoadingState={true}
+          onLoadStart={() => onLoadStart(setState)}
           onNavigationStateChange={(navState) =>
-            setState((state) => ({ ...state, navState: navState }))
+            onNavigationStateChange(navState, setState)
           }
           onScroll={(e) => onScroll(e, setState)}
           ref={webViewRef}

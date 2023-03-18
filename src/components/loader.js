@@ -67,12 +67,12 @@ export default function Loader({ size, color, image }) {
     });
   };
 
-  const onPress = () => {
-    addMoreCircles();
-    if (onPress) {
-      onPress();
-    }
-  };
+  // const onPress = () => {
+  //   addMoreCircles();
+  //   if (onPress) {
+  //     onPress();
+  //   }
+  // };
 
   const SIZE = size || DEFAULT_SIZE;
   const IMAGE = image;
@@ -106,7 +106,9 @@ export default function Loader({ size, color, image }) {
         })}
 
         <View style={{ zIndex: 1000, position: "absolute" }}>
-          <TouchableScale onPress={() => onPress()}>
+          <TouchableScale
+          // onPress={() => onPress()}
+          >
             <View
               style={{
                 shadowColor: "#000",
