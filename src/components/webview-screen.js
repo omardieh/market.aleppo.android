@@ -20,19 +20,24 @@ export default function WebviewScreen({
     isPullToRefreshEnabled: false,
     scrollViewHeight: 0,
     loading: true,
+    navState: {},
   });
-  const { scrollViewHeight, isPullToRefreshEnabled, loading } = state;
+  const { scrollViewHeight, isPullToRefreshEnabled, loading, navState } = state;
 
   const webViewRef = useRef(null);
 
   useEffect(() => {
-    const backHandler = BackHandler.addEventListener(
-      "hardwareBackPress",
-      handleBackPress
-    );
+    let backHandler;
+    if (navState.canGoBack) {
+      backHandler = BackHandler.addEventListener(
+        "hardwareBackPress",
+        handleBackPress
+      );
+      return () => backHandler.remove();
+    }
+  }, [navState.canGoBack]);
 
-    return () => backHandler.remove();
-  }, []);
+  console.log(navState.canGoBack);
 
   const handleBackPress = () => {
     if (webViewRef.current) {
@@ -99,6 +104,9 @@ export default function WebviewScreen({
           </View>
         )}
         <WebView
+          onNavigationStateChange={(navState) =>
+            setState((state) => ({ ...state, navState: navState }))
+          }
           onScroll={onScroll}
           ref={webViewRef}
           bounce={false}

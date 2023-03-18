@@ -24,6 +24,7 @@ export default {
     ],
   ],
   expo: {
+    slug: "aleppomarket",
     extra: {
       eas: {
         projectId: "5498de54-f9bc-4b65-bc5b-f04c1ee8a627",
